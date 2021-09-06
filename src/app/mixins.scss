@@ -1,0 +1,59 @@
+@mixin card {
+  width: 300px;
+  height: 150px;
+  margin: 20px 10px 0 0;
+  padding: 10px;
+  -webkit-box-shadow: 10px 10px 30px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 30px -8px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 30px -8px rgba(0,0,0,0.75);
+}
+
+@mixin btn {
+  border: 0;
+  border-radius: 0;
+  background-color: inherit;
+  margin: 5px;
+  outline: 0;
+  padding: 2px;
+  cursor: pointer;
+}
+
+@mixin input {
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid black;
+  height: 30px;
+  width: 100%;
+  outline: 0;
+  padding-left: 10px;
+}
+
+@mixin backdrop {
+  z-index: 2;
+  background: rgba(0,0,0, .7);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin modal-container {
+  height: 1000px;
+  width: 500px;
+  background: white;
+  padding: 10px;
+  overflow-y: scroll;
+  position: relative;
+}
+
+@mixin exit-delete-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}

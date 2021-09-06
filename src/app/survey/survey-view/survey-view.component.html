@@ -1,0 +1,22 @@
+<div class="survey-view__backdrop">
+  <div class="survey-view__container">
+    <h1 class="survey-view__title">
+      {{survey.name}}
+    </h1>
+    <div *ngFor="let question of survey.questions; let i = index;" class="survey-view__question">
+      <p class="survey-view__question--text">
+        <span>{{i+1}}.</span>
+        <span>{{question.text}}</span>
+      </p>
+      <div class="survey-view__question--option-container">
+        <div class="survey-view__question--option" *ngFor="let option  of question.options; let oi  = index;">
+          <p>
+            <span>{{oi+1}}. w</span>
+            <span>{{option}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <i (click)="closeSurveyView()" class="survey-view__close fa fa-times" aria-hidden="true"></i>
+  </div>
+</div>

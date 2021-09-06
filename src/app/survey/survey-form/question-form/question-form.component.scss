@@ -1,0 +1,34 @@
+@import '../../../mixins';
+
+.question-form {
+  display: flex;
+  flex-direction: column;
+  padding-right: 15px;
+  position: relative;
+
+  &__text {
+    @include input();
+    margin-bottom: 25px;
+  }
+
+  &__options-container {
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+    margin-bottom: 15px;
+  }
+
+  &__option {
+    @include input();
+    margin: 3px  0;
+  }
+
+  &__add-option {
+    @include btn();
+    border: 1px solid black;
+  }
+
+  &__delete-question {
+    @include exit-delete-btn();
+  }
+}

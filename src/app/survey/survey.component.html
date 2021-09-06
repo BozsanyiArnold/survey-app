@@ -1,0 +1,16 @@
+<div class="survey">
+  <app-survey-card *ngFor="let survey of surveyList" [survey]="survey" (surveyOperationEvent)="surveyOperationHandler($event, survey)"></app-survey-card>
+  <button (click)="openSurveyForm()" class="survey__create">
+    <i class="fa fa-plus" aria-hidden="true"></i>
+  </button>
+</div>
+
+<app-survey-form
+  *ngIf="surveyFormOpen"
+  [survey]="surveyToEdit"
+  (emitSurvey)="saveSurvey($event)"
+  (closeSurveyFormEmitter)="closeSurveyForm()"></app-survey-form>
+<app-survey-view
+  *ngIf="surveyViewOpen"
+  [survey]="surveyToView"
+  (closeSurveyViewEmitter)="closeSurveyView()"></app-survey-view>

@@ -1,0 +1,25 @@
+@import "../mixins";
+
+.survey {
+  width: 100vw;
+  max-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+
+  &__create {
+    @include btn();
+    @include card();
+    &:hover {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+
+    &:active {
+      -webkit-box-shadow: inset 10px 10px 30px -8px rgba(0,0,0,0.75);
+      -moz-box-shadow: inset 10px 10px 30px -8px rgba(0,0,0,0.75);
+      box-shadow: inset 10px 10px 30px -8px rgba(0,0,0,0.75);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<div class="survey-form__backdrop">
+  <div class="survey-form__container">
+    <h1 class="survey-form__title">Create survey</h1>
+    <input [(ngModel)]="survey.name" class="survey-form__name" placeholder="Enter survey name" />
+    <div class="survey-form__questions">
+      <app-question-form *ngFor="let question of survey.questions; let i = index;" [question]="question" [index]="i" (deleteQuestionEmitter)="deleteQuestion(i)"></app-question-form>
+      <button (click)="addQuestion()" class="survey-form__add-question">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
+    </div>
+    <button (click)="saveSurvey()" class="survey-form__save">
+      Save survey
+    </button>
+    <i (click)="closeSurveyForm()" class="survey-form__close fa fa-times" aria-hidden="true"></i>
+  </div>
+</div>

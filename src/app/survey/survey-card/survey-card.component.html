@@ -1,0 +1,20 @@
+<div [ngClass]="{'closed': !survey.isOpen}" class="card">
+  <h1>{{survey.name}}</h1>
+  <span>Questions: {{survey.questions?.length}}</span>
+  <div class="card__utility">
+    <button (click)="surveyOperation('lock')" [title]="survey.isOpen ? 'Lock survey' : 'Locked survey' " class="card__utility--lock">
+      <i *ngIf="survey.isOpen" class="fa fa-unlock-alt" aria-hidden="true"></i>
+      <i *ngIf="!survey.isOpen" class="card__utility--lock fa fa-lock" aria-hidden="true"></i>
+    </button>
+    <button (click)="surveyOperation('delete')" title="Delete survey" class="card__utility--delete">
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    </button>
+    <button (click)="surveyOperation('edit')" *ngIf="survey.isOpen" title="Edit survey" class="card__utility--edit">
+      <i class="fa fa-edit" aria-hidden="true"></i>
+    </button>
+    <button (click)="surveyOperation('view')" title="View survey"
+            class="card__utility--view">
+      <i class="fa fa-eye" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>

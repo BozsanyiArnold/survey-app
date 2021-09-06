@@ -1,0 +1,35 @@
+@import "../../mixins";
+
+.survey-view {
+  &__backdrop  {
+    @include backdrop();
+  }
+
+  &__container {
+    @include modal-container();
+  }
+
+  &__question {
+    margin: 25px 0;
+
+    &--option-container  {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    &--option {
+      flex-basis: 35%;
+      border: 1px solid black;
+      margin: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+    }
+  }
+
+  &__close {
+    @include exit-delete-btn();
+  }
+}

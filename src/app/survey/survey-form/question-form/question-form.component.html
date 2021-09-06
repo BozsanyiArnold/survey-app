@@ -1,0 +1,11 @@
+<div class="question-form">
+  <h3  class="question-form__order">{{order}}</h3>
+  <input [(ngModel)]="question.text" class="question-form__text" placeholder="Enter question" />
+  <div class="question-form__options-container">
+    <input *ngFor="let option of question.options; let i = index; trackBy: trackOptions" [(ngModel)]="question.options[i]" class="question-form__option"  placeholder="Enter option" />
+    <button *ngIf="question.options.length < 4" (click)="addOption()" class="question-form__add-option">
+      Add option
+    </button>
+  </div>
+  <i (click)="deleteQuestion()" title="Delete question" class="question-form__delete-question fa fa-trash" aria-hidden="true"></i>
+</div>

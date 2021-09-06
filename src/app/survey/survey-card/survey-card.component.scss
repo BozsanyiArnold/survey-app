@@ -1,0 +1,22 @@
+@import "../../mixins";
+
+.card {
+  @include card();
+  position: relative;
+
+  &.closed {
+    opacity: .5;
+  }
+
+  &__utility {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+
+    button {
+      @include btn();
+    }
+  }
+}

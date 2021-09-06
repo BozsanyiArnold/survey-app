@@ -1,0 +1,37 @@
+@import '../../mixins';
+
+.survey-form {
+
+  &__backdrop {
+    @include backdrop();
+  }
+
+  &__container {
+    @include modal-container();
+  }
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__name {
+    margin-bottom: 15px;
+    @include input();
+  }
+
+  &__add-question {
+    width: 100%;
+    padding: 5px;
+    @include btn();
+  }
+
+  &__save {
+    @include btn();
+    padding: 5px;
+    border: 1px solid black;
+  }
+
+  &__close {
+    @include exit-delete-btn();
+  }
+}
